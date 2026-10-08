@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, Sun, Moon } from 'lucide-react';
 import { useScrollSpy } from '../../hooks/useScrollSpy';
 import Button from '../ui/Button';
 import styles from './Navbar.module.css';
@@ -20,6 +20,19 @@ function Navbar() {
   const [scrolled, setScrolled]     = useState(false);
   const [menuOpen, setMenuOpen]     = useState(false);
   const activeId                    = useScrollSpy(SECTION_IDS, { offsetTop: 80 });
+
+  const [theme, setTheme] = useState(() => {
+    const saved = localStorage.getItem('theme');
+    if (saved) return saved;
+    return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+  });
+
+  useEffect(() => {
+    document.documentElement.setAttribute('data-theme', theme);
+    localStorage.setItem('theme', theme);
+  }, [theme]);
+
+  const toggleTheme = () => setTheme((prev) => (prev === 'light' ? 'dark' : 'light'));
 
   // Detect scroll to apply solid nav background
   useEffect(() => {
@@ -90,18 +103,34 @@ function Navbar() {
             ))}
           </ul>
 
-          {/* Desktop Resume CTA */}
-          <div className={styles.desktopCta}>
-            <Button
-              variant="ghost"
-              size="sm"
-              href="/Amogh_Kashyap_Resume.pdf"
-              download="Amogh_Kashyap_Resume.pdf"
-              target="_blank"
-              ariaLabel="Download Resume (opens in new tab)"
+          {/* Desktop Actions */}
+          <div className={styles.desktopActions}>
+            <button
+              className={`${styles.themeSwitch} ${theme === 'dark' ? styles.dark : ''}`}
+              onClick={toggleTheme}
+              aria-label="Toggle theme"
+              role="switch"
+              aria-checked={theme === 'dark'}
             >
-              Resume
-            </Button>
+              <span className={styles.switchTrack}>
+                <span className={styles.switchThumb}>
+                  {theme === 'dark' ? <Moon size={14} /> : <Sun size={14} />}
+                </span>
+              </span>
+            </button>
+            
+            <div className={styles.desktopCta}>
+              <Button
+                variant="ghost"
+                size="sm"
+                href="/Amogh_Kashyap_Resume.pdf"
+                download="Amogh_Kashyap_Resume.pdf"
+                target="_blank"
+                ariaLabel="Download Resume (opens in new tab)"
+              >
+                Resume
+              </Button>
+            </div>
           </div>
 
           {/* Mobile hamburger */}
@@ -138,7 +167,26 @@ function Navbar() {
                 </button>
               </li>
             ))}
-            <li className={styles.mobileResume}>
+            <li className={styles.mobileActions}>
+              <div className={styles.mobileThemeRow}>
+                <span className={styles.mobileThemeLabel}>
+                  {theme === 'dark' ? 'Dark Mode' : 'Light Mode'}
+                </span>
+                <button
+                  className={`${styles.themeSwitch} ${theme === 'dark' ? styles.dark : ''}`}
+                  onClick={toggleTheme}
+                  aria-label="Toggle theme"
+                  role="switch"
+                  aria-checked={theme === 'dark'}
+                >
+                  <span className={styles.switchTrack}>
+                    <span className={styles.switchThumb}>
+                      {theme === 'dark' ? <Moon size={14} /> : <Sun size={14} />}
+                    </span>
+                  </span>
+                </button>
+              </div>
+              
               <Button
                 variant="ghost"
                 size="md"

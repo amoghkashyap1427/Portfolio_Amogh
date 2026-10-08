@@ -54,7 +54,7 @@ function Hero() {
 
           {/* Name */}
           <h1 className={styles.name}>
-            Amogh<br />Kashyap
+            Amogh Kashyap
           </h1>
 
           {/* Title row */}
