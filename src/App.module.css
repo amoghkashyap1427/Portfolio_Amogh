@@ -1,0 +1,16 @@
+/* =========================================================
+   App.module.css
+   ========================================================= */
+
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--color-bg);
+}
+
+.main {
+  flex: 1;
+  /* No global padding-top — the Hero manages its own internal spacing.
+     Subsequent sections use the .section utility class from global.css. */
+}

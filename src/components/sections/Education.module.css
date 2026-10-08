@@ -1,0 +1,166 @@
+/* =========================================================
+   Education.module.css
+   ========================================================= */
+
+.primaryContainer {
+  margin-bottom: var(--space-12);
+}
+
+.primaryCard {
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  padding: var(--space-8);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Subtle accent border at the top for emphasis */
+.primaryCard::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background-color: var(--color-accent);
+}
+
+.primaryHeader {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  margin-bottom: var(--space-4);
+}
+
+.primaryDegree {
+  font-size: var(--text-2xl);
+  font-weight: var(--weight-bold);
+  color: var(--color-text-primary);
+  line-height: var(--leading-tight);
+}
+
+.primarySpecialisation {
+  font-size: var(--text-lg);
+  font-weight: var(--weight-medium);
+  color: var(--color-accent);
+}
+
+.primaryInstitution {
+  font-size: var(--text-lg);
+  color: var(--color-text-secondary);
+  margin-bottom: var(--space-6);
+  line-height: var(--leading-relaxed);
+}
+
+.primaryMetaRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-6);
+  padding-top: var(--space-4);
+  border-top: 1px solid var(--color-border-subtle);
+}
+
+.primaryMetaItem {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+  color: var(--color-text-primary);
+  background-color: var(--color-bg);
+  padding: var(--space-2) var(--space-4);
+  border-radius: var(--radius-full);
+  border: 1px solid var(--color-border);
+}
+
+.metaIcon {
+  opacity: 0.7;
+}
+
+.metaLabel {
+  color: var(--color-text-secondary);
+}
+
+.metaValue {
+  font-weight: var(--weight-medium);
+}
+
+/* Secondary Education */
+.secondaryContainer {
+  margin-bottom: var(--space-16);
+}
+
+.secondarySectionTitle {
+  font-size: var(--text-lg);
+  font-weight: var(--weight-medium);
+  color: var(--color-text-primary);
+  margin-bottom: var(--space-6);
+}
+
+.secondaryGrid {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.secondaryCard {
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border-subtle);
+  border-radius: var(--radius-lg);
+  padding: var(--space-5);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  transition: border-color var(--transition-fast);
+}
+
+.secondaryCard:hover {
+  border-color: var(--color-border);
+}
+
+.secondaryInstitution {
+  font-size: var(--text-base);
+  font-weight: var(--weight-medium);
+  color: var(--color-text-primary);
+}
+
+.secondaryMeta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-2);
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+  color: var(--color-text-secondary);
+}
+
+.divider {
+  color: var(--color-border);
+}
+
+.score {
+  color: var(--color-accent);
+  font-weight: var(--weight-medium);
+}
+
+/* Responsive adjustments */
+@media (max-width: 640px) {
+  .primaryCard {
+    padding: var(--space-6);
+  }
+
+  .primaryDegree {
+    font-size: var(--text-xl);
+  }
+
+  .primaryMetaRow {
+    flex-direction: column;
+    gap: var(--space-3);
+  }
+  
+  .primaryMetaItem {
+    width: 100%;
+    justify-content: center;
+  }
+}

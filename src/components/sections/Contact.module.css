@@ -1,0 +1,142 @@
+/* =========================================================
+   Contact.module.css
+   ========================================================= */
+
+.wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-12);
+  margin-bottom: var(--space-24);
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  padding: var(--space-12);
+}
+
+.contentLeft {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.heading {
+  font-size: 2.5rem;
+  font-weight: var(--weight-bold);
+  color: var(--color-text-primary);
+  line-height: var(--leading-tight);
+  margin-bottom: var(--space-6);
+}
+
+.supportingText {
+  font-size: var(--text-lg);
+  color: var(--color-text-secondary);
+  line-height: var(--leading-relaxed);
+  margin-bottom: var(--space-8);
+}
+
+.location {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+}
+
+.locationLabel {
+  color: var(--color-text-secondary);
+}
+
+.locationValue {
+  color: var(--color-text-primary);
+}
+
+/* Contact Links */
+.contentRight {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.linksGrid {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.contactCard {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  padding: var(--space-4) var(--space-6);
+  background-color: var(--color-bg);
+  border: 1px solid var(--color-border-subtle);
+  border-radius: var(--radius-lg);
+  text-decoration: none;
+  transition: all var(--transition-normal);
+}
+
+.contactCard:hover {
+  border-color: var(--color-accent);
+  background-color: var(--color-surface-elevated);
+  transform: translateX(4px);
+}
+
+.iconWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-accent);
+}
+
+.linkLabel {
+  font-size: var(--text-base);
+  font-weight: var(--weight-medium);
+  color: var(--color-text-primary);
+  /* Handle long emails */
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .wrapper {
+    padding: var(--space-8);
+    gap: var(--space-8);
+  }
+}
+
+@media (max-width: 768px) {
+  .wrapper {
+    grid-template-columns: 1fr;
+  }
+  
+  .heading {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .wrapper {
+    padding: var(--space-6);
+    border-radius: var(--radius-lg);
+  }
+  
+  .contactCard {
+    padding: var(--space-4);
+  }
+}
+
+@media (max-width: 320px) {
+  .wrapper {
+    padding: var(--space-4);
+  }
+
+  .heading {
+    font-size: 1.75rem;
+  }
+
+  .linkLabel {
+    font-size: var(--text-sm);
+  }
+}

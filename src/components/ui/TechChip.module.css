@@ -1,0 +1,36 @@
+/* =========================================================
+   TechChip.module.css
+   ========================================================= */
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  padding: var(--space-1) var(--space-3);
+  background-color: var(--color-surface-elevated);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  color: var(--color-text-secondary);
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  line-height: 1;
+  white-space: nowrap;
+  transition: var(--transition-colors);
+  user-select: none;
+}
+
+.chip:hover {
+  border-color: var(--color-accent);
+  color: var(--color-text-primary);
+}
+
+/* Accent variant — for highlighting primary tech in project cards */
+.accent {
+  border-color: var(--color-accent-subtle);
+  color: var(--color-accent);
+  background-color: var(--color-accent-muted);
+}
+
+.accent:hover {
+  border-color: var(--color-accent);
+  background-color: rgba(59, 130, 246, 0.2);
+}

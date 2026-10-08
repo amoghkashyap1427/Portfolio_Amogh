@@ -1,0 +1,274 @@
+/* =========================================================
+   Hero.module.css
+   Full-viewport hero section — Engineered Clarity design
+   ========================================================= */
+
+/* ---------------------------------------------------------
+   Section shell
+   --------------------------------------------------------- */
+.hero {
+  position: relative;
+  min-height: 100svh;          /* modern viewport unit */
+  min-height: 100vh;           /* fallback for older browsers */
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  overflow: hidden;            /* clip the background glow */
+}
+
+/* ---------------------------------------------------------
+   Background radial glow
+   A single, very subtle blue bloom in the top-left area.
+   It drifts slowly to communicate depth without distraction.
+   --------------------------------------------------------- */
+.glow {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+
+  /* Glow shape — radial, anchored top-left quadrant */
+  background:
+    radial-gradient(
+      ellipse 60% 50% at 15% 30%,
+      rgba(59, 130, 246, 0.07) 0%,
+      transparent 70%
+    );
+
+  /* Slow drift animation */
+  animation: glowDrift 18s ease-in-out infinite alternate;
+}
+
+@keyframes glowDrift {
+  from { transform: translate(0, 0) scale(1); }
+  to   { transform: translate(3%, 4%) scale(1.05); }
+}
+
+/* ---------------------------------------------------------
+   Inner layout — container + vertical centering
+   --------------------------------------------------------- */
+.inner {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+  padding-top: clamp(var(--space-16), 12vh, var(--space-24));
+  padding-bottom: clamp(var(--space-16), 12vh, var(--space-24));
+}
+
+/* ---------------------------------------------------------
+   Content block — max-width so text doesn't stretch to full
+   page width on ultra-wide monitors
+   --------------------------------------------------------- */
+.content {
+  max-width: 680px;
+  width: 100%;
+
+  /* Initial state — invisible and slightly offset */
+  opacity: 0;
+  transform: translateY(16px);
+  transition:
+    opacity 600ms ease,
+    transform 600ms ease;
+}
+
+/* Triggered state — added by JS after first paint */
+.contentVisible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ---------------------------------------------------------
+   Overline — "Based in Jaipur, India"
+   --------------------------------------------------------- */
+.overline {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  font-weight: var(--weight-medium);
+  letter-spacing: var(--tracking-widest);
+  text-transform: uppercase;
+  color: var(--color-accent);
+  margin-bottom: var(--space-5);
+  opacity: 0.85;
+}
+
+/* ---------------------------------------------------------
+   Name — headline, largest element on page
+   --------------------------------------------------------- */
+.name {
+  font-size: clamp(3rem, 8vw, 5.5rem);
+  font-weight: var(--weight-bold);
+  letter-spacing: -0.035em;
+  line-height: 1.05;
+  color: var(--color-text-primary);
+  margin-bottom: var(--space-6);
+
+  /* Prevent hyphenation breaking at small sizes */
+  overflow-wrap: break-word;
+  word-break: keep-all;
+}
+
+/* ---------------------------------------------------------
+   Title row — "SDE Intern  /  Software Development & AI/Agentic AI"
+   --------------------------------------------------------- */
+.titleRow {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-3);
+  margin-bottom: var(--space-8);
+}
+
+.titlePrimary {
+  font-size: clamp(var(--text-base), 2vw, var(--text-xl));
+  font-weight: var(--weight-semibold);
+  color: var(--color-text-primary);
+  white-space: nowrap;
+}
+
+.titleSep {
+  color: var(--color-text-tertiary);
+  font-weight: var(--weight-regular);
+  font-size: var(--text-lg);
+  line-height: 1;
+}
+
+.titleSecondary {
+  font-size: clamp(var(--text-sm), 1.6vw, var(--text-lg));
+  font-weight: var(--weight-medium);
+  color: var(--color-text-secondary);
+}
+
+/* ---------------------------------------------------------
+   Bio paragraph
+   --------------------------------------------------------- */
+.bio {
+  font-size: clamp(var(--text-base), 1.5vw, var(--text-lg));
+  line-height: var(--leading-relaxed);
+  color: var(--color-text-secondary);
+  margin-bottom: var(--space-10);
+  max-width: 600px;
+}
+
+/* ---------------------------------------------------------
+   CTA button row
+   --------------------------------------------------------- */
+.ctas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-4);
+  margin-bottom: var(--space-6);
+}
+
+/* ---------------------------------------------------------
+   Social icon links
+   --------------------------------------------------------- */
+.socialLinks {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+/* ---------------------------------------------------------
+   Scroll-down indicator
+   --------------------------------------------------------- */
+.scrollIndicator {
+  position: absolute;
+  bottom: var(--space-8);
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 38px;
+  height: 38px;
+  border-radius: var(--radius-full);
+  border: 1px solid var(--color-border);
+  background: transparent;
+  color: var(--color-text-tertiary);
+  cursor: pointer;
+
+  transition:
+    border-color var(--transition-fast),
+    color var(--transition-fast);
+
+  animation: scrollBounce 2.2s ease-in-out infinite;
+}
+
+.scrollIndicator:hover {
+  border-color: var(--color-accent);
+  color: var(--color-accent);
+}
+
+@keyframes scrollBounce {
+  0%, 100% { transform: translateX(-50%) translateY(0); }
+  50%       { transform: translateX(-50%) translateY(5px); }
+}
+
+/* ---------------------------------------------------------
+   Responsive — Tablet (max 900px)
+   --------------------------------------------------------- */
+@media (max-width: 900px) {
+  .titleRow {
+    gap: var(--space-2);
+  }
+
+  .titleSep {
+    display: none;   /* hide separator — items wrap cleanly */
+  }
+
+  .titleRow {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-1);
+  }
+}
+
+/* ---------------------------------------------------------
+   Responsive — Mobile (max 600px)
+   --------------------------------------------------------- */
+@media (max-width: 600px) {
+  .name {
+    /* Ensure 320px doesn't overflow */
+    font-size: clamp(2.4rem, 11vw, 3rem);
+  }
+
+  .ctas {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-3);
+  }
+
+  /* Make primary button full width on small screens */
+  .ctas > :first-child {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .scrollIndicator {
+    bottom: var(--space-5);
+  }
+}
+
+/* ---------------------------------------------------------
+   Reduced motion — disable all transitions/animations
+   (CSS-side complement to the JS hook)
+   --------------------------------------------------------- */
+@media (prefers-reduced-motion: reduce) {
+  .glow {
+    animation: none;
+  }
+
+  .content {
+    transition: none;
+  }
+
+  .scrollIndicator {
+    animation: none;
+  }
+}

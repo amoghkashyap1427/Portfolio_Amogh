@@ -1,0 +1,61 @@
+/* =========================================================
+   Footer.module.css
+   ========================================================= */
+
+.footer {
+  border-top: 1px solid var(--color-border);
+  background-color: var(--color-surface);
+  padding-block: var(--space-8);
+}
+
+.inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-6);
+  flex-wrap: wrap;
+}
+
+/* ----- Identity ----- */
+.identity {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.name {
+  color: var(--color-text-primary);
+  font-size: var(--text-sm);
+}
+
+.title {
+  color: var(--color-text-tertiary);
+  font-size: var(--text-xs);
+}
+
+/* ----- Social icons ----- */
+.social {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+/* ----- Copyright ----- */
+.copy {
+  color: var(--color-text-tertiary);
+  font-size: var(--text-xs);
+}
+
+/* ----- Responsive ----- */
+@media (max-width: 600px) {
+  .inner {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-4);
+  }
+
+  .copy {
+    order: 3;
+    width: 100%;
+  }
+}

@@ -1,0 +1,128 @@
+/* =========================================================
+   Certifications.module.css
+   ========================================================= */
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-6);
+  margin-bottom: var(--space-16);
+}
+
+.cardWrapper {
+  display: flex;
+  height: 100%; /* Ensures ScrollReveal child takes full height of grid cell */
+}
+
+.card {
+  width: 100%;
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-6);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  transition: transform var(--transition-normal), box-shadow var(--transition-normal), border-color var(--transition-normal);
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+  border-color: var(--color-border-hover);
+}
+
+.iconWrapper {
+  width: 48px;
+  height: 48px;
+  background-color: var(--color-surface-elevated);
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--color-border-subtle);
+  margin-bottom: var(--space-2);
+}
+
+.icon {
+  color: var(--color-accent);
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  flex-grow: 1;
+}
+
+.title {
+  font-size: var(--text-lg);
+  font-weight: var(--weight-semibold);
+  color: var(--color-text-primary);
+  line-height: var(--leading-tight);
+  /* The font size and line height allow natural wrapping for long titles */
+}
+
+.meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-2);
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+  margin-top: auto; /* Pushes meta down if titles are different heights */
+}
+
+.issuer {
+  color: var(--color-text-secondary);
+}
+
+.divider {
+  color: var(--color-border);
+}
+
+.date {
+  color: var(--color-accent-muted);
+}
+
+.link {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  color: var(--color-accent);
+  text-decoration: none;
+  margin-top: var(--space-3);
+  align-self: flex-start;
+  transition: color var(--transition-fast);
+}
+
+.link:hover {
+  color: var(--color-accent-dim);
+}
+
+/* Responsive Breakpoints */
+@media (max-width: 1024px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .card {
+    flex-direction: row;
+    align-items: center;
+    padding: var(--space-5);
+  }
+  
+  .iconWrapper {
+    margin-bottom: 0;
+    flex-shrink: 0;
+  }
+  
+  .title {
+    font-size: var(--text-base);
+  }
+}

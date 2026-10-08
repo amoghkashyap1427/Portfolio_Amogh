@@ -1,0 +1,187 @@
+/* =========================================================
+   Navbar.module.css
+   ========================================================= */
+
+/* ----- Outer nav bar ----- */
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  height: var(--nav-height);
+  background-color: transparent;
+  border-bottom: 1px solid transparent;
+  transition:
+    background-color var(--transition-base),
+    border-color var(--transition-base),
+    backdrop-filter var(--transition-base);
+}
+
+/* Solid background on scroll */
+.scrolled {
+  background-color: rgba(10, 12, 16, 0.92);
+  border-bottom-color: var(--color-border);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+/* ----- Inner layout ----- */
+.inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+  gap: var(--space-8);
+}
+
+/* ----- Logo ----- */
+.logo {
+  display: flex;
+  align-items: center;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  flex-shrink: 0;
+}
+
+.logoText {
+  font-family: var(--font-mono);
+  font-size: var(--text-lg);
+  font-weight: var(--weight-bold);
+  color: var(--color-accent);
+  letter-spacing: var(--tracking-wide);
+  transition: color var(--transition-fast);
+}
+
+.logo:hover .logoText {
+  color: var(--color-text-primary);
+}
+
+/* ----- Desktop links ----- */
+.desktopLinks {
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+  flex: 1;
+  justify-content: center;
+}
+
+.navLink {
+  font-size: var(--text-sm);
+  font-weight: var(--weight-medium);
+  color: var(--color-text-secondary);
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: var(--space-2) var(--space-3);
+  border-radius: var(--radius-md);
+  transition: color var(--transition-fast), background-color var(--transition-fast);
+  position: relative;
+}
+
+.navLink:hover {
+  color: var(--color-text-primary);
+  background-color: var(--color-surface-elevated);
+}
+
+.navLink.active {
+  color: var(--color-accent);
+}
+
+/* Active underline indicator */
+.navLink.active::after {
+  content: '';
+  position: absolute;
+  bottom: 2px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 16px;
+  height: 2px;
+  background-color: var(--color-accent);
+  border-radius: var(--radius-full);
+}
+
+/* ----- Desktop CTA ----- */
+.desktopCta {
+  flex-shrink: 0;
+}
+
+/* ----- Hamburger ----- */
+.hamburger {
+  display: none;
+  background: none;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  color: var(--color-text-secondary);
+  padding: var(--space-2);
+  cursor: pointer;
+  transition: var(--transition-colors);
+  align-items: center;
+  justify-content: center;
+}
+
+.hamburger:hover {
+  color: var(--color-text-primary);
+  border-color: var(--color-accent);
+}
+
+/* ----- Mobile menu overlay ----- */
+.mobileMenu {
+  position: fixed;
+  inset: 0;
+  z-index: 99;
+  background-color: var(--color-bg);
+  padding-top: var(--nav-height);
+  display: flex;
+  flex-direction: column;
+  animation: slideInRight 250ms ease forwards;
+  overflow-y: auto;
+}
+
+.mobileLinks {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  padding: var(--space-8) var(--container-pad);
+}
+
+.mobileNavLink {
+  font-size: var(--text-xl);
+  font-weight: var(--weight-medium);
+  color: var(--color-text-secondary);
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  padding: var(--space-4) 0;
+  border-bottom: 1px solid var(--color-border-subtle);
+  transition: color var(--transition-fast);
+  width: 100%;
+}
+
+.mobileNavLink:hover,
+.mobileNavLink.active {
+  color: var(--color-accent);
+}
+
+.mobileResume {
+  margin-top: var(--space-8);
+  padding-top: var(--space-4);
+}
+
+/* ----- Responsive: show hamburger, hide desktop links ----- */
+@media (max-width: 767px) {
+  .desktopLinks {
+    display: none;
+  }
+
+  .desktopCta {
+    display: none;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+}
