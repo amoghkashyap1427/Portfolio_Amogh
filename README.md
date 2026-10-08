@@ -1,88 +1,71 @@
-# Amogh Kashyap — Developer Portfolio
+# Hi there, I'm Amogh Kashyap 👋
 
-A professional, responsive, and performance-optimized developer portfolio built to showcase software engineering and AI/Agentic AI projects. Designed with an "Engineered Clarity" aesthetic inspired by modern developer tooling platforms (Linear, Vercel, Stripe).
+**SDE Intern | Software Development & AI / Agentic AI**
 
-## 🚀 Overview
+I am a B.Tech Computer Science (AI & ML) student currently in my 3rd semester, maintaining a **9.3 CGPA**. I specialize in building full-stack applications and intelligent AI-powered systems. My work ranges from production-grade e-commerce platforms to multi-step Gemini-powered data analysis agents.
 
-This portfolio is built with a focus on fast rendering, strict typography, and accessible UX. It highlights technical projects, competitive programming achievements, and professional experience without relying on generic fluff or heavy external animation libraries.
+📫 **Reach me at:** [amoghkashyap1427@gmail.com](mailto:amoghkashyap1427@gmail.com) | [LinkedIn](https://linkedin.com/in/amoghkashyap17) | [Portfolio Website](https://amoghkashyap.vercel.app)
 
-- **Live URL:** [Add Vercel/Netlify URL here]
-- **Role Focus:** SDE Intern / Software Development / AI & Agentic AI
+---
 
-## 🛠 Tech Stack
+## 🚀 About Me
+- 💻 I’m currently focused on **Full-Stack Web Development** and **Agentic AI**.
+- 🏆 Passionate about **Competitive Programming** and algorithmic problem-solving.
+- 🎓 Studying at **NxtWave Institute of Advanced Technology (NIAT) × Vivekananda Global University** (2025–2029).
+- 🤝 Open to **SDE Intern** and **AI Intern** roles.
 
-- **Framework:** React.js + Vite
-- **Styling:** Vanilla CSS & CSS Modules (CSS Custom Properties for design tokens)
-- **Icons:** Lucide React
-- **Typography:** Inter (Sans-serif) & JetBrains Mono (Monospace)
-- **Deployment:** Ready for Vercel / Netlify
+---
 
-## ✨ Key Features
+## 🛠️ Tech Stack & Skills
 
-- **Component-Driven Architecture:** Modular `<Section>` components mapped to centralized data sources in `src/data/`.
-- **Responsive "Engineered Clarity" Design:** Strict CSS Grid and Flexbox rules ensuring pixel-perfect layouts from 320px mobile viewports up to ultra-wide 1600px screens.
-- **Scroll Spy Navigation:** Custom React hook tracking intersection observers to seamlessly update active navbar states.
-- **Accessibility (a11y) First:** Semantic HTML structure, fully keyboard-navigable focus states, descriptive `aria-label`s, and built-in `prefers-reduced-motion` respecting transitions.
-- **Data-Driven:** All projects, skills, experience, and achievements are decoupled from JSX and driven by JS data models for extremely easy updates.
+**Languages:**  
+`C++` | `Python` | `JavaScript` | `SQL`
 
-## 📂 Project Structure
+**Frontend:**  
+`HTML` | `CSS` | `React.js` | `Tailwind CSS` | `Bootstrap`
 
-```text
-├── public/
-│   ├── favicon.svg              # Custom scalable vector favicon
-│   └── Amogh_Kashyap_Resume.pdf # SDE Intern Resume
-├── src/
-│   ├── components/
-│   │   ├── layout/              # Navbar, Footer
-│   │   ├── sections/            # Hero, About, Projects, Education, etc.
-│   │   └── ui/                  # Reusable primitives (Buttons, TechChips, ScrollReveal)
-│   ├── data/                    # JSON-like config files driving the portfolio content
-│   ├── hooks/                   # Custom React hooks (useScrollSpy, useReducedMotion)
-│   ├── styles/
-│   │   └── global.css           # CSS Reset and Custom Properties / Design Tokens
-│   ├── App.jsx                  # Main routing/section wrapper
-│   └── main.jsx                 # React Entry Point
-```
+**Backend & Database:**  
+`Node.js` | `Express.js` | `REST APIs` | `MongoDB`
 
-## ⚙️ Local Development
+**AI & Data Science:**  
+`Pandas` | `NumPy` | `Matplotlib` | `Gemini API` | `Gradio`
 
-1. **Clone the repository:**
-   ```bash
-   git clone https://github.com/amoghkashyap1427/Portfolio_Amogh.git
-   cd Portfolio_Amogh
-   ```
+**Tools:**  
+`Git` | `GitHub`
 
-2. **Install dependencies:**
-   ```bash
-   npm install
-   ```
+---
 
-3. **Start the development server:**
-   ```bash
-   npm run dev
-   ```
-   Open `http://localhost:5173` in your browser.
+## 🏆 Competitive Programming
 
-4. **Build for production:**
-   ```bash
-   npm run build
-   ```
+I actively participate in algorithmic programming and contests:
+- **LeetCode:** 196+ Problems Solved (122 Easy | 60 Medium | 14 Hard) | **1460** Contest Rating
+- **Codeforces:** 125+ Problems Solved
+- **CodeChef:** Active Practice
+- **Achievements:** Cleared NIAT CP Contest 1 & 2, selected for NIAT Intensive Competitive Programming Training.
 
-## 🎨 Design System
+---
 
-The portfolio utilizes strict design tokens (Custom CSS Properties) declared in `global.css` to maintain visual consistency:
-- **Surfaces:** Deep dark mode (`#0A0C10` background, `#0F1117` cards).
-- **Accents:** Restrained blue accent (`#3B82F6`) used strictly for active states, vital metadata, and call-to-action emphasis.
-- **Borders:** Subtle hierarchical borders replacing heavy drop-shadows to define depth.
+## 💻 Featured Projects
 
-## 📝 Updating Content
+### 🛒 [Choudharyji - E-Commerce Web Application](https://github.com/amoghkashyap1427/E-Commerce-Web-Application)
+A full-featured B2C e-commerce platform built with React, Node.js, Express, and MongoDB. Features secure Razorpay payment integration, Cloudinary image management, JWT authentication, and an interactive admin dashboard.
 
-To update the portfolio in the future, simply edit the corresponding files in `src/data/`:
-- `projects.js`: Add or modify featured and practice projects.
-- `achievements.js`: Update LeetCode, Codeforces, and Hackathon stats.
-- `experience.js`: Add new internships or roles.
-- `education.js`: Update semester, CGPA, or certifications.
+### 🧠 [DataPilot - AI Data Assistant](https://github.com/amoghkashyap1427/DataPilot)
+An intelligent data analysis agent powered by the Gemini API and Gradio. Users can upload datasets, and the agent automatically performs multi-step exploratory data analysis (EDA), generates dynamic Matplotlib visualizations, and provides natural language insights.
 
-## 📄 License
+### 🚆 [RailScan - PNR Status & Train Info](https://github.com/amoghkashyap1427/PNR-Status)
+A real-time Indian Railways tracking application. Utilizes rapid APIs to fetch and display live PNR status, train schedules, and seat availability through a highly responsive React frontend.
 
-This project is open-source and available under the MIT License.
+---
+
+## 🏅 Leadership & Hackathons
+- **Shortlisted:** Internal Smart India Hackathon 2025
+- **Captain / Head:** Phoenix Team, VGU National Level Project Exhibition 2025
+- **PR Head:** Sports Club
+- **Member:** Gen AI Club, Advanced Tech Club
+
+<br />
+
+<div align="center">
+  <i>"Let’s Build Something Useful."</i>
+</div>
